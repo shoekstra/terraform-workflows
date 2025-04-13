@@ -8,8 +8,9 @@ jobs:
     name: Release Please
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      pull-requests: write
+      contents: write # Required for actions like creating release notes
+      issues: write # Needed to create and manage labels
+      pull-requests: write # To manage PRs, especially when making release-related changes
     steps:
       - uses: googleapis/release-please-action@v4
         with:
