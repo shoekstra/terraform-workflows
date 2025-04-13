@@ -1,0 +1,17 @@
+name: Release
+
+on:
+  workflow_call:
+
+jobs:
+  release:
+    name: Release Please
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: googleapis/release-please-action@v4
+        with:
+          config-file: .release-please-config.json
+          release-type: terraform-module
